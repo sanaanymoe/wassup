@@ -1,0 +1,17 @@
+.landing {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex: 1;
+    background-image: url("../../images/background.png");
+}
+
+.landing > h1 {
+    text-align: center;
+}
+
+.landing > img{
+    height: 100px;
+    margin-bottom: 40px;
+}
