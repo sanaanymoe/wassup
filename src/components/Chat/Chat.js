@@ -71,15 +71,19 @@ function Chat() {
     }
 
     const handleDelete = (e) => {
-      const time = e.timestamp;
-      debugger
-      db.collection('rooms').doc(roomId).collection('messages')
-      .onSnapshot(snapshot => snapshot.docs.forEach(doc => {
-        // debugger
-        // doc.data().timestamp === time ? console.log(doc.data()) : console.log("not found")
-      }))
-
+      // const time = e.timestamp;
       // debugger
+      // db.collection('rooms').doc(roomId).collection('messages')
+      // .onSnapshot(snapshot => snapshot.docs.forEach(doc => {
+      //   // debugger
+      //   // doc.data().timestamp === time ? console.log(doc.data()) : console.log("not found")
+      // }))
+
+      // // debugger
+
+      // db.collection('rooms').doc(roomId).collection('messages').delete()
+      // .then(() => deleteComplete())
+      // .catch((error) => console.log(error))
     }
 
 
@@ -102,7 +106,7 @@ function Chat() {
               key={message.timestamp}
             >
               <span className="name">{message.name}</span>
-              {/* <button onClick={handleDelete} key={message.timestamp}>delete</button> */}
+              <button onClick={handleDelete} key={message.timestamp}>delete</button>
                 {message.message}
               <span className="time">
                 {new Date(message.timestamp?.toDate()).toUTCString()}
