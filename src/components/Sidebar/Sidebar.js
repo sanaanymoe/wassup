@@ -16,10 +16,8 @@ function Sidebar() {
 
   useEffect(() => {
     firebase.auth().onAuthStateChanged(firebaseUser => {
-      // debugger
       if (firebaseUser) {
         setUser(firebaseUser)
-        // console.log(firebaseUser)
       } else {
         // setLoggedIn(false)
         // console.log("user not found")
@@ -28,14 +26,11 @@ function Sidebar() {
   }, [])
 
   const handleSearch = (e) => {
-    // console.log(searchTerm);
     setSearchTerm(e.target.value);
   };
 
   useEffect(() => {
     if (searchTerm !== "") {
-      // debugger
-      // console.log(searchTerm);
 
       const unsubscribe = db.collection("rooms").onSnapshot((snapshot) => 
         setRooms(
@@ -52,7 +47,6 @@ function Sidebar() {
       //remember to unsubscribe from your realtime listener on unmount or you will create a memory leak
       return () => unsubscribe();
     } else {
-      // debugger
 
       const unsubscribe = db.collection("rooms").onSnapshot((snapshot) =>
         setRooms(

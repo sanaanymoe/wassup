@@ -15,7 +15,7 @@ function Chat(props) {
       });
     }
   };
-  // debugger
+
   return !props.addNewRoom ? (
     <Link to={`/rooms/${props.id}`}>
       <div className="chatSidebar">
