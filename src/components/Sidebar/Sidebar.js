@@ -28,7 +28,6 @@ function Sidebar() {
 
   useEffect(() => {
     if (searchTerm !== "") {
-
       const unsubscribe = db.collection("rooms").onSnapshot((snapshot) => 
         setRooms(
           snapshot.docs.filter((doc) =>
@@ -40,7 +39,6 @@ function Sidebar() {
             }))
         )
       );
-
       //remember to unsubscribe from your realtime listener on unmount or you will create a memory leak
       return () => unsubscribe();
     } else {
