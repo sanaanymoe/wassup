@@ -18,10 +18,7 @@ function Sidebar() {
     firebase.auth().onAuthStateChanged(firebaseUser => {
       if (firebaseUser) {
         setUser(firebaseUser)
-      } else {
-        // setLoggedIn(false)
-        // console.log("user not found")
-      }
+      } 
     })
   }, [])
 
